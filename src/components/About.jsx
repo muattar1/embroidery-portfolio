@@ -59,7 +59,7 @@ function About() {
               <div className="about-hoop-inner"></div>
 
               <img
-                src="/portfolio/featured/floral-mandala-motif.PNG"
+                src="/embroidery-portfolio/portfolio/featured/floral-mandala-motif.PNG"
                 alt="Floral embroidery design"
               />
 

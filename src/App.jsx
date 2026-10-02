@@ -146,7 +146,7 @@ function HomePage() {
               <div className="hoop-stitches"></div>
 
               <img
-                src="/portfolio/featured/realistic-rose-bouquet.PNG"
+                src="/embroidery-portfolio/portfolio/featured/realistic-rose-bouquet.PNG"
                 alt="Realistic rose bouquet embroidery design"
               />
 
