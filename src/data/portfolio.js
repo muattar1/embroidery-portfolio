@@ -72,7 +72,7 @@ export const portfolioProjects = [
     title: 'Floral Border Lace',
     subtitle: 'Continuous Flower Border Design',
     category: 'Custom Designs',
-    image: '/portfolio/custom-designs/floral-border-lace.PNG',
+  image: '/embroidery-portfolio/portfolio/custom-designs/floral-border-lace.PNG',
 
     software: 'Wilcom EmbroideryStudio',
     size: 'Approx. 1.88 in / 48 mm',
@@ -97,7 +97,7 @@ export const portfolioProjects = [
     title: 'Floral Mandala Motif',
     subtitle: 'Traditional Flower Booti Design',
     category: 'Custom Designs',
-    image: '/portfolio/custom-designs/floral-mandala-motif.PNG',
+   image: '/embroidery-portfolio/portfolio/custom-designs/floral-mandala-motif.PNG',
 
     software: 'Wilcom EmbroideryStudio',
     size: 'Approx. 3.5 × 3.5 in / 90 × 90 mm',
@@ -123,7 +123,7 @@ export const portfolioProjects = [
     title: 'Realistic Rose Bouquet Set',
     subtitle: 'Shaded Floral Spray Elements',
     category: 'Garment Designs',
-    image: '/portfolio/garment-designs/realistic-rose-bouquet.PNG',
+    image: '/embroidery-portfolio/portfolio/garment-designs/realistic-rose-bouquet.PNG',
 
     software: 'Wilcom EmbroideryStudio',
     size: 'Approx. 8 × 8 in / 200 × 200 mm',
