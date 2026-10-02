@@ -1,0 +1,943 @@
+* {
+  box-sizing: border-box;
+}
+
+.site {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: #29251f;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(143, 79, 101, 0.08), transparent 22%),
+    radial-gradient(circle at 82% 65%, rgba(73, 105, 72, 0.08), transparent 25%),
+    #f5efe4;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: relative;
+  z-index: 20;
+  width: min(1280px, calc(100% - 56px));
+  min-height: 90px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #29251f;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.brand-symbol {
+  color: #9a4264;
+  font-size: 19px;
+}
+
+.brand > span:last-child {
+  color: #9a4264;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+  color: #665f56;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #9a4264;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  background: #9a4264;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  color: white;
+  background: #29251f;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #9a4264;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  width: min(1280px, calc(100% - 56px));
+  min-height: calc(100vh - 90px);
+  margin: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 35px 0 80px;
+}
+
+/* =========================================================
+   COLORED THREADS
+   ========================================================= */
+
+.thread-art {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.thread-art svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.thread-art-left {
+  width: 210px;
+  height: 440px;
+  left: -95px;
+  top: 50px;
+}
+
+.thread-art-right {
+  width: 250px;
+  height: 500px;
+  right: -100px;
+  bottom: 15px;
+}
+
+.thread {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 9 7;
+  animation: threadMove 7s linear infinite;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
+}
+
+.thread.purple {
+  stroke: #714b83;
+}
+
+.thread.gold {
+  stroke: #c08a32;
+}
+
+.thread.green {
+  stroke: #66834e;
+}
+
+.thread.pink {
+  stroke: #c35d83;
+}
+
+.thread.blue {
+  stroke: #527c9d;
+}
+
+.thread.maroon {
+  stroke: #873c50;
+}
+
+.thread:nth-child(even) {
+  animation-duration: 9s;
+}
+
+@keyframes threadMove {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+/* =========================================================
+   FLOATING STITCHES
+   ========================================================= */
+
+.floating-stitches {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stitch {
+  position: absolute;
+  width: 25px;
+  height: 6px;
+  border-radius: 99px;
+  transform: rotate(-35deg);
+  animation: stitchFloat 4s ease-in-out infinite;
+}
+
+.stitch::after {
+  content: "";
+  position: absolute;
+  inset: 2px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    currentColor 0,
+    currentColor 4px,
+    transparent 4px,
+    transparent 7px
+  );
+}
+
+.s1 {
+  left: 25%;
+  top: 14%;
+  color: #9a4264;
+}
+
+.s2 {
+  left: 43%;
+  top: 8%;
+  color: #c08a32;
+  transform: rotate(20deg);
+}
+
+.s3 {
+  left: 53%;
+  top: 24%;
+  color: #66834e;
+  transform: rotate(-20deg);
+}
+
+.s4 {
+  left: 8%;
+  top: 70%;
+  color: #714b83;
+  transform: rotate(30deg);
+}
+
+.s5 {
+  left: 46%;
+  top: 84%;
+  color: #527c9d;
+}
+
+.s6 {
+  right: 22%;
+  top: 15%;
+  color: #c35d83;
+}
+
+.s7 {
+  right: 8%;
+  top: 40%;
+  color: #c08a32;
+}
+
+.s8 {
+  right: 32%;
+  bottom: 8%;
+  color: #873c50;
+}
+
+.s9 {
+  left: 34%;
+  bottom: 12%;
+  color: #66834e;
+}
+
+.s10 {
+  right: 45%;
+  top: 58%;
+  color: #714b83;
+}
+
+@keyframes stitchFloat {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) rotate(-35deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(-25deg);
+  }
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 610px;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 22px;
+  color: #9a4264;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+}
+
+.needle-icon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #9a4264;
+  border-radius: 50%;
+  font-size: 8px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(58px, 6.2vw, 88px);
+  line-height: 0.91;
+  letter-spacing: -4px;
+  font-weight: 500;
+}
+
+.hero h1 span {
+  display: block;
+  margin-left: 48px;
+  color: #9a4264;
+  font-style: italic;
+}
+
+.stitched-divider {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 310px;
+  margin: 27px 0 27px 50px;
+}
+
+.stitched-divider span {
+  flex: 1;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #9a4264 0,
+    #9a4264 7px,
+    transparent 7px,
+    transparent 12px
+  );
+}
+
+.stitched-divider i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c08a32;
+  box-shadow: 0 0 0 3px rgba(192, 138, 50, 0.13);
+}
+
+.hero-text {
+  max-width: 510px;
+  color: #71695f;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 13px;
+  margin-top: 31px;
+}
+
+.primary-button,
+.secondary-button {
+  min-height: 51px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.primary-button {
+  gap: 18px;
+  color: white;
+  background: #29251f;
+}
+
+.primary-button:hover {
+  background: #9a4264;
+  transform: translateY(-3px);
+}
+
+.secondary-button {
+  color: #514b43;
+  border: 1px solid #c9bdac;
+}
+
+.secondary-button:hover {
+  color: #9a4264;
+  border-color: #9a4264;
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.hero-details {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 48px;
+  padding-top: 21px;
+  border-top: 1px solid #d7cbbb;
+}
+
+.hero-details > div {
+  display: grid;
+  grid-template-columns: 10px auto;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.detail-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  grid-row: span 2;
+}
+
+.purple-dot {
+  background: #714b83;
+}
+
+.gold-dot {
+  background: #c08a32;
+}
+
+.green-dot {
+  background: #66834e;
+}
+
+.hero-details strong {
+  font-size: 11px;
+}
+
+.hero-details small {
+  color: #898177;
+  font-size: 9px;
+}
+
+/* =========================================================
+   ARTWORK
+   ========================================================= */
+
+.hero-artwork {
+  position: relative;
+  z-index: 5;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Large embroidery hoop */
+
+.hoop {
+  position: relative;
+  width: min(510px, 90%);
+  aspect-ratio: 1;
+  padding: 19px;
+  border: 13px solid #b78647;
+  border-radius: 50%;
+  background: #c89c61;
+  box-shadow:
+    0 25px 60px rgba(70, 51, 30, 0.18),
+    inset 0 0 0 4px rgba(255, 255, 255, 0.25);
+  transform: rotate(-3deg);
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+.hoop:hover {
+  transform: rotate(0deg) scale(1.025);
+  box-shadow:
+    0 35px 80px rgba(70, 51, 30, 0.23),
+    inset 0 0 0 4px rgba(255, 255, 255, 0.25);
+}
+
+.hoop-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(130, 108, 77, 0.08) 0,
+      rgba(130, 108, 77, 0.08) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(130, 108, 77, 0.06) 0,
+      rgba(130, 108, 77, 0.06) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    #eee5d4;
+}
+
+.hoop-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform 0.7s ease;
+}
+
+.hoop:hover img {
+  transform: scale(1.08);
+}
+
+/* Visible stitch ring */
+
+.hoop-stitches {
+  position: absolute;
+  z-index: 4;
+  inset: 9px;
+  border-radius: 50%;
+  border: 3px dashed #9a4264;
+  pointer-events: none;
+  opacity: 0.85;
+  animation: hoopStitch 5s linear infinite;
+}
+
+.hoop-stitches::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px dotted #66834e;
+  border-radius: 50%;
+}
+
+@keyframes hoopStitch {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Extra embroidered overlay */
+
+.image-thread-overlay {
+  position: absolute;
+  inset: 25px;
+  border-radius: 50%;
+  border: 1px dashed rgba(192, 138, 50, 0.8);
+  pointer-events: none;
+}
+
+/* =========================================================
+   THREAD SPOOL
+   ========================================================= */
+
+.thread-spool {
+  position: absolute;
+  right: 4%;
+  top: 14%;
+  width: 70px;
+  height: 105px;
+  z-index: 10;
+  transform: rotate(12deg);
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.12));
+}
+
+.spool-body {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  width: 54px;
+  height: 80px;
+  border-radius: 45%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #873c50 0,
+      #873c50 5px,
+      #9f4a60 5px,
+      #9f4a60 8px
+    );
+}
+
+.spool-top,
+.spool-bottom {
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 17px;
+  border-radius: 50%;
+  background: #6e3041;
+}
+
+.spool-top {
+  top: 5px;
+}
+
+.spool-bottom {
+  bottom: 4px;
+}
+
+.spool-thread {
+  position: absolute;
+  left: 35px;
+  top: -35px;
+  width: 140px;
+  height: 95px;
+  border-top: 3px solid #9a4264;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+/* =========================================================
+   NEEDLE
+   ========================================================= */
+
+.needle {
+  position: absolute;
+  left: 8%;
+  bottom: 17%;
+  width: 160px;
+  height: 3px;
+  z-index: 10;
+  background: linear-gradient(
+    90deg,
+    #817d77,
+    #d6d0c5,
+    #8d8880
+  );
+  transform: rotate(-35deg);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.needle::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -5px;
+  width: 14px;
+  height: 13px;
+  border: 2px solid #77716a;
+  border-radius: 50%;
+}
+
+.needle span {
+  position: absolute;
+  right: -16px;
+  top: -1px;
+  width: 20px;
+  height: 1px;
+  background: #9a4264;
+}
+
+/* =========================================================
+   CAPTION
+   ========================================================= */
+
+.artwork-caption {
+  position: absolute;
+  right: 1%;
+  bottom: 8%;
+  z-index: 12;
+  min-width: 225px;
+  padding: 17px 20px;
+  color: white;
+  background: #29251f;
+  box-shadow: 0 20px 40px rgba(45, 37, 29, 0.2);
+}
+
+.artwork-caption span,
+.artwork-caption small {
+  display: block;
+  color: #c9a967;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.artwork-caption strong {
+  display: block;
+  margin: 5px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.artwork-caption small {
+  color: #aaa198;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .nav-links {
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 20px;
+  }
+
+  .hero-artwork {
+    min-height: 520px;
+  }
+
+  .hoop {
+    width: min(430px, 90%);
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 45px;
+  }
+
+  .hero-content {
+    max-width: 720px;
+  }
+
+  .hero-artwork {
+    min-height: 580px;
+  }
+
+  .thread-art-left {
+    opacity: 0.45;
+  }
+
+  .thread-art-right {
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar,
+  .hero {
+    width: calc(100% - 30px);
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .nav-button {
+    padding: 11px 13px;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-top: 35px;
+    gap: 25px;
+  }
+
+  .hero-kicker {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 14vw, 65px);
+    letter-spacing: -3px;
+  }
+
+  .hero h1 span {
+    margin-left: 24px;
+  }
+
+  .stitched-divider {
+    width: 220px;
+    margin-left: 25px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .hero-details {
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .hero-artwork {
+    min-height: 430px;
+  }
+
+  .hoop {
+    width: 330px;
+    border-width: 9px;
+    padding: 13px;
+  }
+
+  .thread-spool {
+    right: 0;
+    top: 5%;
+    transform: scale(0.72) rotate(12deg);
+  }
+
+  .needle {
+    left: 0;
+    bottom: 15%;
+    transform: scale(0.75) rotate(-35deg);
+  }
+
+  .artwork-caption {
+    right: 0;
+    bottom: 2%;
+    min-width: 190px;
+    padding: 13px 15px;
+  }
+
+  .artwork-caption strong {
+    font-size: 12px;
+  }
+
+  .thread-art-left {
+    left: -115px;
+    top: 20%;
+    opacity: 0.65;
+  }
+
+  .thread-art-right {
+    right: -125px;
+    opacity: 0.65;
+  }
+
+  .floating-stitches .stitch {
+    transform: scale(0.75);
+  }
+}
+/* Hero mobile overflow fix */
+@media (max-width: 600px) {
+  .hero {
+    overflow: hidden;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-details {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero-details > div {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .hero-details strong,
+  .hero-details small {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-details {
+    gap: 10px;
+  }
+
+  .hero-details > div {
+    gap: 5px;
+  }
+
+  .hero-details strong {
+    font-size: 12px;
+  }
+
+  .hero-details small {
+    font-size: 9px;
+  }
+}

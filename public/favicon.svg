@@ -1,0 +1,56 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b4f8f"/>
+      <stop offset="50%" stop-color="#c49a3a"/>
+      <stop offset="100%" stop-color="#5f8f63"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Large embroidery hoop -->
+  <circle cx="64" cy="64" r="61"
+    fill="#f8f4ee"
+    stroke="#211c22"
+    stroke-width="5"/>
+
+  <circle cx="64" cy="64" r="53"
+    fill="none"
+    stroke="url(#thread)"
+    stroke-width="3"
+    stroke-dasharray="4 5"/>
+
+  <!-- Large embroidered flower -->
+  <path
+    d="M64 27
+       C51 13 31 24 36 42
+       C17 35 8 55 24 65
+       C7 72 15 93 35 89
+       C28 108 50 115 61 98
+       C67 116 89 108 85 90
+       C104 100 117 79 100 68
+       C117 59 106 38 88 44
+       C94 25 74 14 67 33 Z"
+    fill="url(#thread)"
+    opacity="0.97"/>
+
+  <!-- Flower center -->
+  <circle cx="64" cy="64" r="12" fill="#211c22"/>
+  <circle cx="64" cy="64" r="5" fill="#f8f4ee"/>
+
+  <!-- Needle -->
+  <path
+    d="M104 9 L71 51"
+    stroke="#211c22"
+    stroke-width="5"
+    stroke-linecap="round"/>
+
+  <circle cx="104" cy="9" r="4" fill="#c49a3a"/>
+
+  <!-- Thread -->
+  <path
+    d="M104 9 C123 22 119 43 105 55 C92 66 100 84 119 89"
+    fill="none"
+    stroke="#8b4f8f"
+    stroke-width="4"
+    stroke-linecap="round"/>
+</svg>

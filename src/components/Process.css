@@ -1,0 +1,765 @@
+
+.process {
+  position: relative;
+  overflow: hidden;
+  padding: 125px 7vw 135px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(194, 156, 206, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 80%, rgba(184, 148, 61, 0.07), transparent 28%),
+    #f7f3ee;
+  color: #211c22;
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(80, 60, 70, 0.035) 0,
+      rgba(80, 60, 70, 0.035) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+}
+
+.process-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.process-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 65px;
+}
+
+.process-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: #8d6b35;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.process-kicker i {
+  width: 28px;
+  height: 1px;
+  background: #b8943d;
+}
+
+.process-header h2 {
+  margin: 0;
+  max-width: 650px;
+  font-size: clamp(45px, 5.5vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.process-header h2 span {
+  display: block;
+  color: #8e6ab8;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.process-header > p {
+  max-width: 410px;
+  margin: 0 0 4px;
+  color: #766d75;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* =========================
+   CONNECTING THREAD
+========================= */
+
+.process-line {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 365px;
+  height: 1px;
+  z-index: 1;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b8943d 0 8px,
+      transparent 8px 16px
+    );
+  opacity: 0.28;
+}
+
+.process-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 75px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b8943d;
+  opacity: 0.5;
+  filter: blur(2px);
+  animation: processThreadTravel 7s linear infinite;
+}
+
+@keyframes processThreadTravel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(100% + 1200px));
+  }
+}
+
+/* =========================
+   PROCESS GRID
+========================= */
+
+.process-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* =========================
+   PROCESS CARD
+========================= */
+
+.process-card {
+  --process-color: #b8943d;
+
+  position: relative;
+  min-height: 315px;
+  padding: 24px 23px 25px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(33, 28, 34, 0.1);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.68)
+    );
+
+  box-shadow:
+    0 14px 35px rgba(40, 30, 40, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* stitched inner border */
+
+.process-card::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+
+  border: 1px dashed color-mix(
+    in srgb,
+    var(--process-color) 38%,
+    transparent
+  );
+
+  border-radius: 13px;
+  opacity: 0.35;
+
+  pointer-events: none;
+
+  transition:
+    inset 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* embroidery hoop corner */
+
+.process-card::after {
+  content: '';
+  position: absolute;
+
+  width: 125px;
+  height: 125px;
+
+  right: -65px;
+  bottom: -65px;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--process-color) 25%,
+    transparent
+  );
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 7px rgba(80, 60, 70, 0.015);
+
+  transition:
+    transform 0.55s ease,
+    opacity 0.45s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+
+  border-color: color-mix(
+    in srgb,
+    var(--process-color) 45%,
+    rgba(33, 28, 34, 0.1)
+  );
+
+  box-shadow:
+    0 22px 45px rgba(40, 30, 40, 0.1),
+    0 0 25px color-mix(
+      in srgb,
+      var(--process-color) 9%,
+      transparent
+    );
+}
+
+.process-card:hover::before {
+  inset: 5px;
+  opacity: 0.7;
+}
+
+.process-card:hover::after {
+  transform: scale(1.3) rotate(20deg);
+}
+
+/* =========================
+   THREAD COLORS
+========================= */
+
+.process-card-gold {
+  --process-color: #b8943d;
+}
+
+.process-card-purple {
+  --process-color: #8e6ab8;
+}
+
+.process-card-green {
+  --process-color: #6f9a68;
+}
+
+.process-card-pink {
+  --process-color: #c66d91;
+}
+
+.process-card-blue {
+  --process-color: #5d83b3;
+}
+
+.process-card-maroon {
+  --process-color: #9b5960;
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.process-card-top {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.process-number {
+  color: var(--process-color);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.process-stitch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.process-stitch i {
+  width: 13px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--process-color);
+
+  opacity: 0.45;
+
+  transform: rotate(-25deg);
+
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.process-card:hover .process-stitch i {
+  width: 17px;
+  opacity: 0.8;
+}
+
+/* =========================
+   PROCESS ICON
+========================= */
+
+.process-icon {
+  position: relative;
+
+  width: 62px;
+  height: 62px;
+
+  margin: 30px 0 22px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--process-color);
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.process-icon-ring {
+  position: absolute;
+  inset: 2px;
+
+  border: 1px dashed currentColor;
+  border-radius: 50%;
+
+  opacity: 0.55;
+
+  animation: processRing 16s linear infinite;
+}
+
+.process-icon-ring::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+
+  border: 1px solid currentColor;
+  border-radius: 50%;
+
+  opacity: 0.22;
+}
+
+.process-icon-dot {
+  position: relative;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: var(--process-color);
+
+  box-shadow:
+    0 0 0 5px color-mix(
+      in srgb,
+      var(--process-color) 10%,
+      transparent
+    ),
+    0 0 18px color-mix(
+      in srgb,
+      var(--process-color) 22%,
+      transparent
+    );
+}
+
+.process-icon-dot::after {
+  content: '';
+
+  position: absolute;
+
+  width: 32px;
+  height: 1px;
+
+  left: 13px;
+  top: 6px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--process-color) 0 5px,
+      transparent 5px 9px
+    );
+
+  opacity: 0.55;
+}
+
+.process-card:hover .process-icon {
+  transform: scale(1.1) rotate(-3deg);
+
+  filter:
+    drop-shadow(
+      0 0 12px color-mix(
+        in srgb,
+        var(--process-color) 22%,
+        transparent
+      )
+    );
+}
+
+@keyframes processRing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.process-card h3 {
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 12px;
+
+  color: #29242a;
+
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.process-card:hover h3 {
+  color: var(--process-color);
+  transform: translateX(2px);
+}
+
+.process-card > p {
+  position: relative;
+  z-index: 3;
+
+  margin: 0;
+
+  max-width: 330px;
+
+  color: #776f77;
+
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.process-tags {
+  position: absolute;
+
+  left: 23px;
+  right: 23px;
+  bottom: 24px;
+
+  z-index: 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.process-tags span {
+  padding: 5px 8px;
+
+  border: 1px solid rgba(33, 28, 34, 0.1);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  color: #766d75;
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.process-card:hover .process-tags span {
+  color: var(--process-color);
+
+  border-color: color-mix(
+    in srgb,
+    var(--process-color) 30%,
+    transparent
+  );
+
+  background: color-mix(
+    in srgb,
+    var(--process-color) 6%,
+    white
+  );
+}
+
+/* =========================
+   DECORATIVE THREADS
+========================= */
+
+.process-thread {
+  position: absolute;
+
+  top: 60px;
+
+  width: 180px;
+  height: 560px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0.35;
+}
+
+.process-thread-left {
+  left: -65px;
+}
+
+.process-thread-right {
+  right: -65px;
+}
+
+.process-thread svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.process-thread-line {
+  fill: none;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 7 12;
+
+  animation:
+    processSideThread 9s linear infinite;
+}
+
+.process-thread-line.purple {
+  stroke: #76509a;
+}
+
+.process-thread-line.gold {
+  stroke: #b8943d;
+  animation-delay: -2s;
+}
+
+.process-thread-line.green {
+  stroke: #6f8d55;
+}
+
+.process-thread-line.maroon {
+  stroke: #783d48;
+  animation-delay: -3s;
+}
+
+@keyframes processSideThread {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -150;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+  .process {
+    padding: 105px 5vw 115px;
+  }
+
+  .process-header {
+    gap: 35px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-line {
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .process {
+    padding: 85px 20px 95px;
+  }
+
+  .process-header {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .process-header h2 {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .process-header > p {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .process-card {
+    min-height: 285px;
+    padding: 17px 14px;
+    border-radius: 14px;
+  }
+
+  .process-card::before {
+    inset: 6px;
+  }
+
+  .process-icon {
+    width: 50px;
+    height: 50px;
+    margin: 21px 0 17px;
+  }
+
+  .process-card h3 {
+    font-size: 15px;
+  }
+
+  .process-card > p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .process-tags {
+    left: 14px;
+    right: 14px;
+    bottom: 15px;
+  }
+
+  .process-tags span {
+    padding: 4px 6px;
+    font-size: 6px;
+  }
+
+  .process-thread {
+    width: 100px;
+    height: 360px;
+    opacity: 0.2;
+  }
+
+  .process-thread-left {
+    left: -55px;
+  }
+
+  .process-thread-right {
+    right: -55px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+  .process {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .process-grid {
+    gap: 8px;
+  }
+
+  .process-card {
+    min-height: 275px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .process-card h3 {
+    font-size: 14px;
+  }
+
+  .process-card > p {
+    font-size: 8px;
+  }
+
+  .process-tags {
+    left: 11px;
+    right: 11px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .process-line::after,
+  .process-icon-ring,
+  .process-thread-line {
+    animation: none;
+  }
+
+  .process-card,
+  .process-icon {
+    transition: none;
+  }
+}
+

@@ -1,0 +1,789 @@
+
+.services {
+  position: relative;
+  overflow: hidden;
+  padding: 125px 7vw 135px;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(118, 80, 154, 0.1), transparent 25%),
+    radial-gradient(circle at 90% 85%, rgba(184, 148, 61, 0.1), transparent 28%),
+    linear-gradient(135deg, #211c22 0%, #241e25 48%, #1d1920 100%);
+  color: #fff;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.025) 0,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  mix-blend-mode: soft-light;
+}
+
+.services-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 58px;
+}
+
+.services-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: #d3b76d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.services-kicker i {
+  width: 28px;
+  height: 1px;
+  background: #d3b76d;
+}
+
+.services-header h2 {
+  margin: 0;
+  max-width: 600px;
+  font-size: clamp(45px, 5.5vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.services-header h2 span {
+  display: block;
+  color: #c29cce;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.services-header > p {
+  max-width: 410px;
+  margin: 0 0 4px;
+  color: #bdb5bd;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* =========================
+   SERVICE GRID
+========================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+  --thread-color: #b8943d;
+
+  position: relative;
+  min-height: 330px;
+  padding: 24px 22px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 45px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    background 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Inner stitched border */
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+
+  border: 1px dashed color-mix(
+    in srgb,
+    var(--thread-color) 45%,
+    transparent
+  );
+
+  border-radius: 13px;
+
+  opacity: 0.3;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.4s ease,
+    inset 0.4s ease;
+}
+
+/* Bottom embroidery hoop */
+
+.service-card::after {
+  content: '';
+  position: absolute;
+
+  width: 145px;
+  height: 145px;
+
+  right: -72px;
+  bottom: -72px;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--thread-color) 28%,
+    transparent
+  );
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.015),
+    0 0 0 8px color-mix(
+      in srgb,
+      var(--thread-color) 15%,
+      transparent
+    );
+
+  transition:
+    transform 0.6s ease,
+    opacity 0.5s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-9px);
+
+  border-color: color-mix(
+    in srgb,
+    var(--thread-color) 55%,
+    rgba(255, 255, 255, 0.15)
+  );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 55px rgba(0, 0, 0, 0.22),
+    0 0 28px color-mix(
+      in srgb,
+      var(--thread-color) 10%,
+      transparent
+    );
+}
+
+.service-card:hover::before {
+  inset: 6px;
+  opacity: 0.65;
+}
+
+.service-card:hover::after {
+  transform: scale(1.25) rotate(18deg);
+  opacity: 0.9;
+}
+
+/* =========================
+   SERVICE COLORS
+========================= */
+
+.service-card:has(.service-icon-01) {
+  --thread-color: #b8943d;
+}
+
+.service-card:has(.service-icon-02) {
+  --thread-color: #c66d91;
+}
+
+.service-card:has(.service-icon-03) {
+  --thread-color: #8e6ab8;
+}
+
+.service-card:has(.service-icon-04) {
+  --thread-color: #5d83b3;
+}
+
+.service-card:has(.service-icon-05) {
+  --thread-color: #6f9a68;
+}
+
+.service-card:has(.service-icon-06) {
+  --thread-color: #b75d5d;
+}
+
+.service-card:has(.service-icon-07) {
+  --thread-color: #d08b5b;
+}
+
+.service-card:has(.service-icon-08) {
+  --thread-color: #58a19b;
+}
+
+/* =========================
+   TOP ROW
+========================= */
+
+.service-top {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-number {
+  color: #8f8490;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+
+  transition:
+    color 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+.service-card:hover .service-number {
+  color: var(--thread-color);
+  letter-spacing: 0.2em;
+}
+
+.service-arrow {
+  display: grid;
+
+  width: 31px;
+  height: 31px;
+
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+
+  color: var(--thread-color);
+
+  font-size: 14px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-card:hover .service-arrow {
+  transform: rotate(45deg);
+
+  background: color-mix(
+    in srgb,
+    var(--thread-color) 12%,
+    transparent
+  );
+
+  border-color: color-mix(
+    in srgb,
+    var(--thread-color) 45%,
+    transparent
+  );
+}
+
+/* =========================
+   EMBROIDERY ICON
+========================= */
+
+.service-icon {
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  margin: 29px 0 23px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--thread-color);
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+/* Outer thread circle */
+
+.service-icon::before {
+  content: '';
+
+  position: absolute;
+  inset: 1px;
+
+  border: 1px dashed currentColor;
+  border-radius: 50%;
+
+  opacity: 0.55;
+
+  animation: iconThreadRotate 18s linear infinite;
+}
+
+/* Inner hoop */
+
+.service-icon::after {
+  content: '';
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid currentColor;
+  border-radius: 50%;
+
+  opacity: 0.22;
+
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 255, 255, 0.015);
+
+  transition:
+    inset 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.service-icon svg {
+  position: relative;
+  z-index: 2;
+
+  width: 45px;
+  height: 45px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(
+      0 0 5px color-mix(
+        in srgb,
+        var(--thread-color) 30%,
+        transparent
+      )
+    );
+}
+
+.service-icon svg path,
+.service-icon svg circle,
+.service-icon svg rect {
+  stroke-dasharray: 5 3;
+
+  animation:
+    serviceStitch 8s linear infinite;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(-2deg);
+
+  filter:
+    drop-shadow(
+      0 0 14px color-mix(
+        in srgb,
+        var(--thread-color) 30%,
+        transparent
+      )
+    );
+}
+
+.service-card:hover .service-icon::before {
+  animation-duration: 7s;
+}
+
+.service-card:hover .service-icon::after {
+  inset: 6px;
+  opacity: 0.4;
+}
+
+@keyframes serviceStitch {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes iconThreadRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.service-card h3 {
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 12px;
+
+  color: #fff;
+
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: var(--thread-color);
+  transform: translateX(2px);
+}
+
+.service-card p {
+  position: relative;
+  z-index: 3;
+
+  margin: 0;
+
+  color: #aaa1aa;
+
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.service-tags {
+  position: absolute;
+
+  left: 22px;
+  right: 22px;
+  bottom: 23px;
+
+  z-index: 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.service-tags span {
+  padding: 5px 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #c9c0c9;
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.service-card:hover .service-tags span {
+  color: var(--thread-color);
+
+  border-color: color-mix(
+    in srgb,
+    var(--thread-color) 30%,
+    transparent
+  );
+
+  background: color-mix(
+    in srgb,
+    var(--thread-color) 6%,
+    transparent
+  );
+}
+
+/* =========================
+   DECORATIVE THREADS
+========================= */
+
+.services-thread {
+  position: absolute;
+
+  top: 50px;
+
+  width: 160px;
+  height: 500px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0.45;
+}
+
+.services-thread-left {
+  left: -50px;
+}
+
+.services-thread-right {
+  right: -50px;
+}
+
+.services-thread svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.service-thread {
+  fill: none;
+
+  stroke-width: 2;
+  stroke-linecap: round;
+
+  stroke-dasharray: 7 12;
+
+  animation:
+    serviceThreadMove 8s linear infinite;
+}
+
+.service-thread.purple {
+  stroke: #76509a;
+}
+
+.service-thread.gold {
+  stroke: #b8943d;
+  animation-delay: -2s;
+}
+
+.service-thread.green {
+  stroke: #6f8d55;
+}
+
+.service-thread.maroon {
+  stroke: #783d48;
+  animation-delay: -3s;
+}
+
+@keyframes serviceThreadMove {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -130;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .services {
+    padding: 105px 5vw 115px;
+  }
+
+  .services-header {
+    gap: 35px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-card {
+    min-height: 315px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .services {
+    padding: 85px 20px 95px;
+  }
+
+  .services-header {
+    display: block;
+    margin-bottom: 38px;
+  }
+
+  .services-header h2 {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .services-header > p {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .service-card {
+    min-height: 285px;
+    padding: 17px 14px;
+    border-radius: 14px;
+  }
+
+  .service-card::before {
+    inset: 6px;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    margin: 21px 0 17px;
+  }
+
+  .service-icon::before {
+    inset: 1px;
+  }
+
+  .service-icon::after {
+    inset: 7px;
+  }
+
+  .service-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .service-card h3 {
+    font-size: 15px;
+  }
+
+  .service-card p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .service-tags {
+    left: 14px;
+    right: 14px;
+    bottom: 15px;
+  }
+
+  .service-tags span {
+    padding: 4px 6px;
+    font-size: 6px;
+  }
+
+  .services-thread {
+    width: 100px;
+    height: 360px;
+    opacity: 0.28;
+  }
+
+  .services-thread-left {
+    left: -55px;
+  }
+
+  .services-thread-right {
+    right: -55px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+  .services {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .services-grid {
+    gap: 8px;
+  }
+
+  .service-card {
+    min-height: 275px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .service-card h3 {
+    font-size: 14px;
+  }
+
+  .service-card p {
+    font-size: 8px;
+  }
+
+  .service-tags {
+    left: 11px;
+    right: 11px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-icon::before,
+  .service-icon svg path,
+  .service-icon svg circle,
+  .service-icon svg rect,
+  .service-thread {
+    animation: none;
+  }
+
+  .service-card,
+  .service-icon,
+  .service-arrow {
+    transition: none;
+  }
+}
+

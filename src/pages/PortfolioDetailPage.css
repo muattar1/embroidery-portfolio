@@ -1,0 +1,347 @@
+.portfolio-detail-page {
+  min-height: 100vh;
+  padding: 125px 24px 100px;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(122, 74, 168, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 25%,
+      rgba(210, 165, 70, 0.09),
+      transparent 30%
+    ),
+    #f8f4ee;
+}
+
+.portfolio-detail {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.portfolio-detail-image-wrap {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      #f3eee7 70%,
+      #ebe4da 100%
+    );
+  box-shadow: 0 25px 70px rgba(42, 31, 22, 0.1);
+}
+
+.portfolio-detail-image-wrap::before,
+.portfolio-detail-image-wrap::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(122, 74, 168, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.portfolio-detail-image-wrap::before {
+  width: 72%;
+  aspect-ratio: 1;
+}
+
+.portfolio-detail-image-wrap::after {
+  width: 60%;
+  aspect-ratio: 1;
+}
+
+.portfolio-detail-image {
+  position: relative;
+  z-index: 2;
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.portfolio-detail-image-wrap:hover .portfolio-detail-image {
+  transform: scale(1.025);
+}
+
+.portfolio-detail-content {
+  padding: 10px 0;
+}
+
+.portfolio-detail-back {
+  display: inline-block;
+  margin-bottom: 35px;
+  color: #706a64;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.portfolio-detail-back:hover {
+  color: #7a4aa8;
+}
+
+.portfolio-detail-category {
+  display: inline-block;
+  margin-bottom: 17px;
+  color: #7a4aa8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.portfolio-detail-content h1 {
+  margin: 0;
+  color: #181615;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+}
+
+.portfolio-detail-subtitle {
+  margin: 17px 0 0;
+  color: #817a73;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.portfolio-detail-line {
+  width: 65px;
+  height: 2px;
+  margin: 28px 0;
+  background: #7a4aa8;
+}
+
+.portfolio-detail-description {
+  margin: 0;
+  color: #5e5954;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.portfolio-detail-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.detail-info-item {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid rgba(23, 23, 23, 0.07);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.detail-info-item span,
+.detail-colors > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #968f87;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.detail-info-item strong {
+  display: block;
+  color: #292624;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.detail-colors {
+  margin-top: 26px;
+}
+
+.detail-color-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-color {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #5f5953;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.detail-color i {
+  width: 8px;
+  height: 8px;
+  display: block;
+  border-radius: 50%;
+  background: #7a4aa8;
+}
+
+.detail-color:nth-child(2) i {
+  background: #c49a3a;
+}
+
+.detail-color:nth-child(3) i {
+  background: #6d8d45;
+}
+
+.detail-color:nth-child(4) i {
+  background: #7a2f35;
+}
+
+.detail-color:nth-child(5) i {
+  background: #38669a;
+}
+
+.detail-color:nth-child(6) i {
+  background: #c35a82;
+}
+
+.detail-project-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  padding: 14px 21px;
+  border-radius: 999px;
+  background: #171717;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.detail-project-button:hover {
+  background: #7a4aa8;
+  transform: translateY(-2px);
+}
+
+.detail-project-button span {
+  font-size: 16px;
+}
+
+.portfolio-detail-not-found {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.portfolio-detail-not-found > span {
+  color: #7a4aa8;
+  font-size: 32px;
+}
+
+.portfolio-detail-not-found h1 {
+  margin: 15px 0 10px;
+  font-size: 42px;
+}
+
+.portfolio-detail-not-found p {
+  color: #716b65;
+  line-height: 1.7;
+}
+
+.detail-back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  background: #171717;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .portfolio-detail {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .portfolio-detail-image-wrap {
+    min-height: 560px;
+  }
+
+  .portfolio-detail-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-detail-page {
+    padding: 100px 14px 70px;
+  }
+
+  .portfolio-detail {
+    gap: 32px;
+  }
+
+  .portfolio-detail-image-wrap {
+    min-height: 360px;
+    border-radius: 18px;
+  }
+
+  .portfolio-detail-image {
+    width: 92%;
+    height: 92%;
+  }
+
+  .portfolio-detail-back {
+    margin-bottom: 25px;
+  }
+
+  .portfolio-detail-content h1 {
+    font-size: 40px;
+  }
+
+  .portfolio-detail-subtitle {
+    font-size: 14px;
+  }
+
+  .portfolio-detail-description {
+    font-size: 14px;
+  }
+
+  .portfolio-detail-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .detail-info-item {
+    min-height: 82px;
+    padding: 12px;
+  }
+
+  .detail-info-item strong {
+    font-size: 10px;
+  }
+
+  .detail-project-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
