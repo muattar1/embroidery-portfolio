@@ -168,4 +168,73 @@ export const portfolioProjects = [
     description:
       'A delicate floral branch embroidery design featuring green leaves with white and warm golden flowers.',
   },
+    {
+    id: 'womens-neckline-embroidery',
+    title: "Women's Neckline Embroidery",
+    subtitle: 'Floral Neckline Design',
+    category: 'Garment Designs',
+    image: '/embroidery-portfolio/portfolio/garment-designs/womens-neckline-embroidery.PNG',
+
+    software: 'Wilcom EmbroideryStudio',
+    size: '165.79 × 241.06 mm',
+    stitches: '22,007 stitches',
+
+    colors: [
+      'Red',
+      'Gold',
+      'Blue',
+    ],
+
+    embroideryType: 'Machine Embroidery Digitizing',
+    stitchTypes: 'Satin & Tatami Stitch Fill',
+
+    description:
+      'A decorative floral neckline embroidery design created for women’s garments.',
+  },
+  {
+    id: 'red-floral-branch-embroidery',
+    title: 'Red Floral Branch Motif',
+    subtitle: 'Elegant Red Floral & Leaf Branch',
+    category: 'garment-designs',
+    image: '/embroidery-portfolio/portfolio/garment-designs/red-floral-branch.PNG',
+
+    software: 'Wilcom EmbroideryStudio',
+    size: '86.37 × 73.14 mm',
+    stitches: '7,807 stitches',
+
+    colors: [
+      'Red',
+      'Pink',
+      'White',
+    ],
+
+    embroideryType: 'Machine Embroidery Digitizing',
+    stitchTypes: 'Satin & Tatami Stitch Fill',
+
+    description:
+      'A beautiful red floral branch motif featuring detailed leaves, flower buds, and delicate pink and white accents.',
+  },
+  {
+    id: 'floral-boti-garment-embroidery',
+    title: 'Floral Boti Motif',
+    subtitle: 'Purple and Olive Floral Vine Design',
+    category: 'Garment Designs',
+    image: '/embroidery-portfolio/portfolio/garment-designs/boti.PNG',
+
+    software: 'Wilcom EmbroideryStudio',
+    size: '69.31 × 117.37 mm',
+    stitches: '4,447 stitches',
+
+    colors: [
+      'Purple',
+      'Pink',
+      'Olive Green',
+    ],
+
+    embroideryType: 'Machine Embroidery Digitizing',
+    stitchTypes: 'Satin & Tatami Stitch Fill',
+
+    description:
+      'A stylish floral boti vine design digitized for women garments, featuring purple and pink petals with detailed olive green stems.',
+  },
 ]
