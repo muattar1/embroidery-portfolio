@@ -144,4 +144,28 @@ export const portfolioProjects = [
     description:
       'A realistic floral element set featuring roses, buds, leaves, and stems for jackets, dresses, shirt fronts, and embroidered patches.',
   },
+    {
+    id: 'green-floral-branch',
+    title: 'Green Floral Branch',
+    subtitle: 'Floral Branch Embroidery Design',
+    category: 'Custom Designs',
+    image: '/embroidery-portfolio/portfolio/custom-designs/green-floral-branch.PNG',
+
+    software: 'Wilcom EmbroideryStudio',
+    size: '44.73 × 34.49 mm',
+    stitches: '2,532 stitches',
+
+    colors: [
+      'Forest Green',
+      'Sage Green',
+      'White',
+      'Warm Gold',
+    ],
+
+    embroideryType: 'Machine Embroidery Digitizing',
+    stitchTypes: 'Satin & Tatami Stitch Fill',
+
+    description:
+      'A delicate floral branch embroidery design featuring green leaves with white and warm golden flowers.',
+  },
 ]
