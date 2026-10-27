@@ -1,4 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom'
+import { useState } from 'react'
+import { portfolioProjects } from './data/portfolio'
 import './App.css'
 import FeaturedWork from './components/FeaturedWork'
 import Services from './components/Services'
@@ -13,6 +15,16 @@ import PortfolioDetailPage from './pages/PortfolioDetailPage'
 import ScrollToHash from './components/ScrollToHash'
 
 function HomePage() {
+  const [heroProject] = useState(() => {
+    if (!portfolioProjects.length) return null
+
+    const randomIndex = Math.floor(
+      Math.random() * portfolioProjects.length
+    )
+
+    return portfolioProjects[randomIndex]
+  })
+
   return (
     <main>
       <section className="hero" id="home">
@@ -145,10 +157,12 @@ function HomePage() {
             <div className="hoop-inner">
               <div className="hoop-stitches"></div>
 
-              <img
-                src="/embroidery-portfolio/portfolio/featured/realistic-rose-bouquet.PNG"
-                alt="Realistic rose bouquet embroidery design"
-              />
+              {heroProject && (
+  <img
+    src={heroProject.image}
+    alt={`${heroProject.title} embroidery design`}
+  />
+)}
 
               <div className="image-thread-overlay"></div>
             </div>
@@ -168,10 +182,10 @@ function HomePage() {
           </div>
 
           <div className="artwork-caption">
-            <span>FEATURED WORK</span>
-            <strong>Realistic Rose Bouquet</strong>
-            <small>Realistic Thread Embroidery</small>
-          </div>
+  <span>FEATURED WORK</span>
+  <strong>{heroProject?.title || 'Embroidery Design'}</strong>
+  <small>{heroProject?.category || 'Custom Embroidery'}</small>
+</div>
 
         </div>
       </section>

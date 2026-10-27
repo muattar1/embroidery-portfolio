@@ -1,25 +1,80 @@
-
-import { featuredPortfolio } from '../data/portfolio'
+import { useState } from 'react'
+import { portfolioProjects } from '../data/portfolio'
 import './FeaturedWork.css'
 
+function shuffle(items) {
+  return [...items].sort(() => Math.random() - 0.5)
+}
+
+function getRandomFeaturedProjects(projects) {
+  const groupedByCategory = projects.reduce((groups, project) => {
+    if (!groups[project.category]) {
+      groups[project.category] = []
+    }
+
+    groups[project.category].push(project)
+    return groups
+  }, {})
+
+  const categories = shuffle(Object.keys(groupedByCategory))
+
+  const selectedProjects = categories
+    .map((category) => {
+      const projectsInCategory = groupedByCategory[category]
+      return shuffle(projectsInCategory)[0]
+    })
+    .slice(0, 3)
+
+  return shuffle(selectedProjects)
+}
+
 function FeaturedWork() {
+  const [featuredProjects] = useState(() =>
+    getRandomFeaturedProjects(portfolioProjects)
+  )
+
   return (
     <section className="featured-work" id="portfolio">
-              <div className="featured-thread featured-thread-left" aria-hidden="true">
+      <div
+        className="featured-thread featured-thread-left"
+        aria-hidden="true"
+      >
         <svg viewBox="0 0 180 500">
-          <path className="featured-thread-line purple" d="M20 0 C150 70, 20 130, 130 210 S170 360, 40 500" />
-          <path className="featured-thread-line gold" d="M70 0 C170 100, 40 180, 150 280 S130 400, 70 500" />
-          <path className="featured-thread-line green" d="M120 0 C20 100, 150 180, 50 300 S30 420, 150 500" />
+          <path
+            className="featured-thread-line purple"
+            d="M20 0 C150 70, 20 130, 130 210 S170 360, 40 500"
+          />
+          <path
+            className="featured-thread-line gold"
+            d="M70 0 C170 100, 40 180, 150 280 S130 400, 70 500"
+          />
+          <path
+            className="featured-thread-line green"
+            d="M120 0 C20 100, 150 180, 50 300 S30 420, 150 500"
+          />
         </svg>
       </div>
 
-      <div className="featured-thread featured-thread-right" aria-hidden="true">
+      <div
+        className="featured-thread featured-thread-right"
+        aria-hidden="true"
+      >
         <svg viewBox="0 0 180 500">
-          <path className="featured-thread-line maroon" d="M160 0 C30 80, 170 150, 50 250 S20 390, 150 500" />
-          <path className="featured-thread-line pink" d="M100 0 C170 100, 20 180, 130 290 S150 410, 30 500" />
-          <path className="featured-thread-line blue" d="M40 0 C160 100, 20 210, 140 320 S120 430, 20 500" />
+          <path
+            className="featured-thread-line maroon"
+            d="M160 0 C30 80, 170 150, 50 250 S20 390, 150 500"
+          />
+          <path
+            className="featured-thread-line pink"
+            d="M100 0 C170 100, 20 180, 130 290 S150 410, 30 500"
+          />
+          <path
+            className="featured-thread-line blue"
+            d="M40 0 C160 100, 20 210, 140 320 S120 430, 20 500"
+          />
         </svg>
       </div>
+
       <div className="featured-header">
         <div>
           <span className="section-kicker">SELECTED EMBROIDERY</span>
@@ -36,7 +91,7 @@ function FeaturedWork() {
       </div>
 
       <div className="featured-grid">
-        {featuredPortfolio.map((project) => (
+        {featuredProjects.map((project) => (
           <article className="portfolio-card" key={project.id}>
             <div className="portfolio-image-wrap">
               <img
@@ -108,4 +163,3 @@ function FeaturedWork() {
 }
 
 export default FeaturedWork
-

@@ -13,20 +13,12 @@ const categories = [
   'Custom Designs',
 ]
 
-function shuffleProjects(projects) {
-  return [...projects].sort(() => Math.random() - 0.5)
-}
-
 function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All')
 
-  const [randomProjects] = useState(() =>
-    shuffleProjects(portfolioProjects).slice(0, 3)
-  )
-
   const visibleProjects =
     activeCategory === 'All'
-      ? randomProjects
+      ? portfolioProjects
       : portfolioProjects.filter(
           (project) => project.category === activeCategory
         )
