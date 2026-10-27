@@ -237,4 +237,29 @@ export const portfolioProjects = [
     description:
       'A stylish floral boti vine design digitized for women garments, featuring purple and pink petals with detailed olive green stems.',
   },
+  {
+  id: 'eagle-logo-digitizing',
+  title: 'Eagle Logo Digitizing',
+  subtitle: 'Professional Embroidery Logo',
+  category: 'Logo Digitizing',
+  image: '/embroidery-portfolio/portfolio/logo-digitizing/eagle-logo-digitizing.PNG',
+
+  software: 'Wilcom EmbroideryStudio',
+  size: '74.78 × 90.43 mm',
+  stitches: '19,057 stitches',
+
+  colors: [
+    'Light Blue',
+    'Dark Blue',
+    'Navy Blue',
+    'Yellow / Gold',
+    'White',
+  ],
+
+  embroideryType: 'Machine Embroidery Digitizing',
+  stitchTypes: 'Satin & Tatami Stitch Fill',
+
+  description:
+    'An eagle logo converted into a detailed machine embroidery design with layered shading, clean outlines, and defined color sections.',
+},
 ]
