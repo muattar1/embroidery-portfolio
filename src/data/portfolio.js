@@ -265,15 +265,26 @@ export const portfolioProjects = [
 {
   id: 'wolf-logo-digitizing',
   title: 'Wolf Logo Digitizing',
+  subtitle: 'Detailed Wolf Embroidery Logo',
   category: 'Logo Digitizing',
   image: '/embroidery-portfolio/portfolio/logo-digitizing/wolf-logo-digitizing.PNG',
-  software: 'Wilcom',
+
+  software: 'Wilcom EmbroideryStudio',
   size: '80.72 × 150.24 mm',
-  stitches: '22,352',
-  embroideryType: 'Logo Digitizing',
-  colors: 'Multi-color',
-  stitchTypes: 'Satin, Fill, Run Stitch',
+  stitches: '22,352 stitches',
+
+  colors: [
+    'Grey',
+    'White',
+    'Dark Grey',
+    'Black',
+    'Red / Pink',
+  ],
+
+  embroideryType: 'Machine Embroidery Digitizing',
+  stitchTypes: 'Satin & Tatami Stitch Fill',
+
   description:
-    'A detailed wolf logo digitized for machine embroidery with carefully structured stitch details, lettering, and production-focused sequencing.',
+    'A detailed wolf logo digitized for machine embroidery with defined outlines, layered shading, and clean stitch details.',
 },
 ]
