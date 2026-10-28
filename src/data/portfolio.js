@@ -262,4 +262,18 @@ export const portfolioProjects = [
   description:
     'An eagle logo converted into a detailed machine embroidery design with layered shading, clean outlines, and defined color sections.',
 },
+{
+  id: 'wolf-logo-digitizing',
+  title: 'Wolf Logo Digitizing',
+  category: 'Logo Digitizing',
+  image: '/embroidery-portfolio/portfolio/logo-digitizing/wolf-logo-digitizing.PNG',
+  software: 'Wilcom',
+  size: '80.72 × 150.24 mm',
+  stitches: '22,352',
+  embroideryType: 'Logo Digitizing',
+  colors: 'Multi-color',
+  stitchTypes: 'Satin, Fill, Run Stitch',
+  description:
+    'A detailed wolf logo digitized for machine embroidery with carefully structured stitch details, lettering, and production-focused sequencing.',
+},
 ]
